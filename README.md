@@ -1,11 +1,11 @@
-
 <img alt="Nabbar Nav" align="right" src="./nabbar_logo.png" width="400px"/>
 
 # Nabbar Nav
+_*Nabbar*: an unfortunately common typo for "navbar"_
 
 A general purpose nav bar component for React, using CSS grid.
 
-[See it live here!](https://smessina.com/gitflow/#/)
+[See it live here!](https://smessina.com/nabbar-demo)
 
 ## Table of Contents
 
@@ -19,23 +19,48 @@ A general purpose nav bar component for React, using CSS grid.
 
 ## Introduction
 
-"Nabbar": an unfortunately common typo for "navbar"
-
-
 Nabbar Nav is a React component for navigation bars, made to fit into existing projects with relative ease.
 
-The inspiration for Nabbar came out of my interest in CSS Grid. Until learning grid, I had relied on Bootstrap for most of my layout needs. The power of CSS Grid made me think I could do without Bootstrap, and so far that has been the case. One component I missed, however, was the nav bar. With that in mind, I set out to make one of my own and ended up with Nabbar.
-
+The inspiration for Nabbar came out of my interest in CSS Grid. Until learning grid, I had relied on Bootstrap for most of my layout needs. The power of CSS Grid made me think I could do without Bootstrap, and so far that has been the case. One aspect of Bootstrap that I missed, however, was the nav bar. With that in mind, I set out to make one of my own and ended up with Nabbar Nav.
 
 ## Getting Started
 
 ### Prerequisites
 
-Because Nabbar is a React Component, it is expected that you have a React site ready for it. If you are starting from scratch, I recommend using Facebook's own create-react-app, and have included an example in example-create-react-app. 
+Because Nabbar is a React Component, it is expected that you have a React site ready for it. If you are starting from scratch, I recommend using Facebook's own create-react-app, and have included a boilerplate example in example-create-react-app. 
+
+
+### Installing
+
+#### Manual Installation 
+
+First, clone the project to a local directory.
+
+```
+   git clone https://github.com/regexpressyourself/Nabbar-Nav.git && cd Nabbar-Nav
+```
+
+Then simply include the Nabbar component as shown above.
+
+
+
+#### Using NPM
+
+An NPM version of Nabbar Nav is currently in the works. If you are interested in helping publish Nabbar Nav, see [contributing](#contributing).
+
+
+**[Back to top](#table-of-contents)**
+
+## Deployment
+
+You will need to include the Nabbar Nav component somewhere in your React project to use it. All Nabbar components and stylesheets expect to be placed in the same directory. 
+
+Once you have Nabbar Nav included in your project, you should make sure that the surrounding component hierarchy is in place:
+
 
 ### Component Hierarchy
 
-There is also a specific way to set up your component hierarchy if you want to start using Nabbar out of the box. In addition the Nabbar component, you will need at least two others: a main wrapper which will call Nabbar, and a body element which will hold the body of your site.
+There is a specific way to set up your component hierarchy if you want to start using Nabbar out of the box. In addition the Nabbar component, you will need at least two others: a main wrapper which will call Nabbar, and a body element which will hold the body of your site.
 
 The selectors for each of these elements are defined in Nabbar.css, but by default, the wrapper is expected to have an attribute of:
 
@@ -52,7 +77,7 @@ and the body should have an attribute of:
 A mockup of the top-level component's render method is as follows:
 
 ``` js
-render {
+render() {
   return (
     <div className="App">
       <Nabbar />
@@ -64,33 +89,26 @@ render {
 }
 ```
 
-### Installing
+### Defining Menu Items
 
-#### Manual Installation 
+Menu Items in your navigation can be defined in the NabbarMenu component. All menu items are stored in NabbarMenu's state as objects in an array. 
 
-First, clone the project to a local directory.
+Menu Items can either call a component function, or link to a route, depending on how you define your menu item objects.
 
-```
-   git clone https://github.com/regexpressyourself/Nabbar-Nav.git && cd Nabbar-Nav
-```
-
-Then simply include the Nabbar component as shown above.
-
-#### Using NPM
+The menu item object is laid out as follows:
 
 ```
-   npm install
+   {
+      // title is required
+      title: Title Of Menu Item, 
+
+      // href should only be declared if the menu item is a link
+      href: The link the the menu item points to,
+
+      // onClick should only be declared if the menu item calls a function
+      onClick: The function to be called when clicking the menu item
+   }
 ```
-
-#### Using Yarn
-
-```
-   yarn install
-```
-
-**[Back to top](#table-of-contents)**
-
-## Deployment
 
 
 **[Back to top](#table-of-contents)**
