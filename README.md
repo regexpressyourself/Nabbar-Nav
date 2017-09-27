@@ -27,7 +27,7 @@ The inspiration for Nabbar came out of my interest in [CSS Grid](https://develop
 
 ### Prerequisites
 
-Because Nabbar is a React Component, it is expected that you have a React site ready for it. If you are starting from scratch, I recommend using [Facebook's own create-react-app](https://github.com/facebookincubator/create-react-app), and have included a boilerplate example in [example-create-react-app](example-create-react-app).
+Because Nabbar is a React Component, it is expected that you have a React site ready for it. If you are starting from scratch, I recommend using [Facebook's own create-react-app](https://github.com/facebookincubator/create-react-app), and have included a boilerplate example in [example_create-react-app](example_create-react-app).
 
 
 ### Installing
