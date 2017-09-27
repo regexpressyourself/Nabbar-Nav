@@ -50,7 +50,9 @@ class NabbarMenu extends Component {
                     <li key={menu_item.title} className="nav-menu-item">
                         <a  className="nav-menu-link" 
                             href={menu_item.href}>
+                            <span>
                             {menu_item.title}
+                        </span>
                         </a>
                     </li>
                 );
@@ -60,7 +62,9 @@ class NabbarMenu extends Component {
                     <li key={menu_item.title} className="nav-menu-item">
                         <span  className="nav-menu-link" 
                             onClick={menu_item.onClick}>
+                            <span>
                             {menu_item.title}
+                        </span>
                         </span>
                     </li>
                 );

@@ -170,7 +170,7 @@
 .nav-menu-item {
     display: flex;
     flex-flow: column wrap;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     transition: 0.3s;
     width: 260px;
@@ -183,7 +183,11 @@
 .nav-menu-link{
     width: 100%;
     height: 100%;
-    padding: 35px 60px 35px 30px;
+    padding-left: 30px;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
     cursor:pointer;
     text-align: left;
     color: var(--dark-color);
