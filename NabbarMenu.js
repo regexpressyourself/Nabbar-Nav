@@ -23,7 +23,7 @@ class NabbarMenu extends Component {
                 },
                 {
                     title: "# To add a Nav bar",
-                    href:  "/menu-item-3"
+                    onClick:  this.testFunc
                 },
                 {
                     title: "# To your website",
@@ -35,17 +35,33 @@ class NabbarMenu extends Component {
         };
     }
 
+    testFunc() {
+        alert("woah");
+    }
+
     componentWillMount() {
         /* Create the menu list elements, stored in this.sate.li_elements */
         let li_elements = this.state.menu_items.map((menu_item) => {
-            return (
-                <li key={menu_item.title} className="nav-menu-item">
-                    <a  className="nav-menu-link" 
-                        href={menu_item.href}>
-                        {menu_item.title}
-                    </a>
-                </li>
-            );
+            if (menu_item.href) {
+                return (
+                    <li key={menu_item.title} className="nav-menu-item">
+                        <a  className="nav-menu-link" 
+                            href={menu_item.href}>
+                            {menu_item.title}
+                        </a>
+                    </li>
+                );
+            }
+            else if (menu_item.onClick) {
+                return (
+                    <li key={menu_item.title} className="nav-menu-item">
+                        <span  className="nav-menu-link" 
+                            onClick={menu_item.onClick}>
+                            {menu_item.title}
+                        </span>
+                    </li>
+                );
+            }
         });
         this.setState({
             li_elements: li_elements
