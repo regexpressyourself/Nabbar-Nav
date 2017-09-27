@@ -1,7 +1,7 @@
 <img alt="Nabbar Nav" align="right" src="./nabbar_logo.png" width="400px"/>
 
 # Nabbar Nav
-_*Nabbar*: an unfortunately common typo for "navbar"_
+_**Nabbar**: an unfortunately common typo for "navbar"_
 
 A general purpose nav bar component for React, using CSS grid.
 
@@ -21,13 +21,13 @@ A general purpose nav bar component for React, using CSS grid.
 
 Nabbar Nav is a React component for navigation bars, made to fit into existing projects with relative ease.
 
-The inspiration for Nabbar came out of my interest in CSS Grid. Until learning grid, I had relied on Bootstrap for most of my layout needs. The power of CSS Grid made me think I could do without Bootstrap, and so far that has been the case. One aspect of Bootstrap that I missed, however, was the nav bar. With that in mind, I set out to make one of my own and ended up with Nabbar Nav.
+The inspiration for Nabbar came out of my interest in [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout). Until learning grid, I had relied on [Bootstrap](https://getbootstrap.com/) for most of my layout needs. The power of CSS Grid made me think I could do without Bootstrap, and so far that has been the case. One aspect of Bootstrap that I missed, however, was the nav bar. With that in mind, I set out to make one of my own and ended up with Nabbar Nav.
 
 ## Getting Started
 
 ### Prerequisites
 
-Because Nabbar is a React Component, it is expected that you have a React site ready for it. If you are starting from scratch, I recommend using Facebook's own create-react-app, and have included a boilerplate example in example-create-react-app. 
+Because Nabbar is a React Component, it is expected that you have a React site ready for it. If you are starting from scratch, I recommend using [Facebook's own create-react-app](https://github.com/facebookincubator/create-react-app), and have included a boilerplate example in [example-create-react-app](example-create-react-app).
 
 
 ### Installing
@@ -40,9 +40,7 @@ First, clone the project to a local directory.
    git clone https://github.com/regexpressyourself/Nabbar-Nav.git && cd Nabbar-Nav
 ```
 
-Then simply include the Nabbar component as shown above.
-
-
+Then simply include the Nabbar component as shown below.
 
 #### Using NPM
 
@@ -118,7 +116,7 @@ The menu item object is laid out as follows:
 * [React](https://facebook.github.io/react/) - The web framework that powers the site
 * [Webpack](https://webpack.github.io/) - A module builder automate development and production build processes
 * [Babel](https://babeljs.io/) - Transpiler to convert raw React code into browser-ready HTML and Javascript
-* [CSS Grid]() - CSS Grid was the inspiration for this project, and is actually amazingly fun to work with
+* [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) - CSS Grid was the inspiration for this project, and is actually amazingly fun to work with
 
 **[Back to top](#table-of-contents)**
 
