@@ -116,16 +116,6 @@ class Nabbar extends Component {
                         <span className="bottom-bun"></span>
 
                     </p>
-                    <p id="hamburger" 
-                        className="shown-nav-burger"
-                        ref={this.setBurgerRef} 
-                        onClick={this.toggleNav}>
-
-                        <span className="top-bun"></span>
-                        <span className="meat"></span>
-                        <span className="bottom-bun"></span>
-
-                    </p>
 
                 </div>
 
