@@ -122,7 +122,7 @@ The menu item object is laid out as follows:
 
 ## Contributing
 
-I'm always happy to receive pull requests, questions/issues regarding code, and feature requests on all my projects. Please feel free to open an issue or submit a pull request.
+I'm always happy to receive pull requests, questions/issues regarding code, and feature requests on all my projects. Please feel free to open an issue, submit a pull request, or just contact me directly because that's probably easier.
 
 **[Back to top](#table-of-contents)**
 
