@@ -18,11 +18,11 @@ class NabbarMenu extends Component {
                 //     }
                 {
                     title: "# Nabbar Nav",
-                    href:  "/menu-item-1"
+                    href:  "#"
                 },
                 {
                     title: "# Makes it easy",
-                    href:  "/menu-item-2"
+                    href:  "#"
                 },
                 {
                     title: "# To add a Nav bar",
@@ -30,7 +30,7 @@ class NabbarMenu extends Component {
                 },
                 {
                     title: "# To your website",
-                    href:  "/menu-item-4"
+                    href:  "#"
                 }
             ],
             // li_elements will store the actual <li> tags for our nav
