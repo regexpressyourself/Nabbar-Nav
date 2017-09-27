@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
-import './Nabber.css';
-import NabberMenu from './NabberMenu';
+import './Nabbar.css';
+import NabbarMenu from './NabbarMenu';
 
-class Nabber extends Component {
+class Nabbar extends Component {
     constructor(props) {
         super(props);
 
@@ -18,7 +18,7 @@ class Nabber extends Component {
     }
 
     componentDidMount() {
-    /* Register an event listener for user clicks */
+        /* Register an event listener for user clicks */
         document.addEventListener('mousedown', this.handleClickOutside);
     }
 
@@ -94,31 +94,46 @@ class Nabber extends Component {
         return (
             <div className="nav">
 
-                {/* Nav bar title */}
-                <h2 ref={this.setTitleRef} id="nav-title"
-                    className={nav_toggle+"-title"} >
-                    <a href="/" >
-                        Nabber Nav
-                    </a>
-                </h2>
+                {/* Top nav bar with title and hamburger menu */}
+                <div className={"top-bar "+nav_toggle+"-top-bar"} >
 
-                {/* Hamburger menu */}
-                <p id="hamburger" 
-                    className={nav_toggle+"-burger"}
-                    ref={this.setBurgerRef} 
-                    onClick={this.toggleNav}>
+                    {/* Nav bar title */}
+                    <h2 ref={this.setTitleRef} id="nav-title"
+                        className={nav_toggle+"-title"} >
+                        <a href="/" >
+                            Nabbar Nav
+                        </a>
+                    </h2>
 
-                    <span className="top-bun"></span>
-                    <span className="meat"></span>
-                    <span className="bottom-bun"></span>
+                    {/* Hamburger menu */}
+                    <p id="hamburger" 
+                        className={nav_toggle+"-burger"}
+                        ref={this.setBurgerRef} 
+                        onClick={this.toggleNav}>
 
-                </p>
+                        <span className="top-bun"></span>
+                        <span className="meat"></span>
+                        <span className="bottom-bun"></span>
 
-                {/* Nav Menu (menu items listed in NabberMenu component) */}
+                    </p>
+                    <p id="hamburger" 
+                        className="shown-nav-burger"
+                        ref={this.setBurgerRef} 
+                        onClick={this.toggleNav}>
+
+                        <span className="top-bun"></span>
+                        <span className="meat"></span>
+                        <span className="bottom-bun"></span>
+
+                    </p>
+
+                </div>
+
+                {/* Nav Menu (menu items listed in NabbarMenu component) */}
                 <div id="nav-menu-container" 
                     className={nav_toggle}
                     ref={this.setSideNavRef}>
-                    <NabberMenu />
+                    <NabbarMenu />
                 </div>
 
                 {/* Background Clicker (see Nav.css for details) */}
@@ -130,4 +145,4 @@ class Nabber extends Component {
     }
 }
 
-export default Nabber;
+export default Nabbar;

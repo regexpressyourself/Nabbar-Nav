@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Nabber from './Nabber';
+import Nabbar from './Nabbar';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <Nabber />
-          <div id="body">
+          <Nabbar />
+          <div className="Body">
 
               <header className="App-header">
                   <img src={logo} className="App-logo" alt="logo" />

@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 
-class NabberMenu extends Component {
+class NabbarMenu extends Component {
     /* NOTES:
      * - this.state.menu_items holds the menu item list. 
      * - Each menu item needs a title and a link destination, as shown below. 
@@ -14,7 +14,7 @@ class NabberMenu extends Component {
                 //      href:  where that link should point to
                 //     }
                 {
-                    title: "# Nabber Nav",
+                    title: "# Nabbar Nav",
                     href:  "/menu-item-1"
                 },
                 {
@@ -62,4 +62,4 @@ class NabberMenu extends Component {
     }
 }
 
-export default NabberMenu;
+export default NabbarMenu;
