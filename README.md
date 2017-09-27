@@ -1,5 +1,5 @@
 
-<img alt="Nabbar Nav" align="right" src="nabber_logo.png" width="400px"/>
+<img alt="Nabbar Nav" align="right" src="./nabber_logo.png" width="400px"/>
 
 # Nabbar Nav
 
