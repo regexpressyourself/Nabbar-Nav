@@ -22,7 +22,7 @@
     grid-template-areas: "nav"
     "body"
 }
-#body {
+.Body{
     grid-area: body;
 }
 

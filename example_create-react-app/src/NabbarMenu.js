@@ -3,7 +3,10 @@ import React, { Component} from 'react';
 class NabbarMenu extends Component {
     /* NOTES:
      * - this.state.menu_items holds the menu item list. 
-     * - Each menu item needs a title and a link destination, as shown below. 
+     * - Each menu item needs a title 
+     * - Each menu item needs either an href or onClick attribute
+     *     - href works for menu items that are links
+     *     - onClick works for menu items that call functions
      * - Add as many or as few menu items as you want */
     constructor(props) {
         super(props);
@@ -23,7 +26,7 @@ class NabbarMenu extends Component {
                 },
                 {
                     title: "# To add a Nav bar",
-                    href:  "/menu-item-3"
+                    onClick:  this.tempFunc
                 },
                 {
                     title: "# To your website",
@@ -35,17 +38,33 @@ class NabbarMenu extends Component {
         };
     }
 
+    tempFunc() {
+        alert("Woah, I'm a function!");
+    }
+
     componentWillMount() {
         /* Create the menu list elements, stored in this.sate.li_elements */
         let li_elements = this.state.menu_items.map((menu_item) => {
-            return (
-                <li key={menu_item.title} className="nav-menu-item">
-                    <a  className="nav-menu-link" 
-                        href={menu_item.href}>
-                        {menu_item.title}
-                    </a>
-                </li>
-            );
+            if (menu_item.href) {
+                return (
+                    <li key={menu_item.title} className="nav-menu-item">
+                        <a  className="nav-menu-link" 
+                            href={menu_item.href}>
+                            {menu_item.title}
+                        </a>
+                    </li>
+                );
+            }
+            else if (menu_item.onClick) {
+                return (
+                    <li key={menu_item.title} className="nav-menu-item">
+                        <span  className="nav-menu-link" 
+                            onClick={menu_item.onClick}>
+                            {menu_item.title}
+                        </span>
+                    </li>
+                );
+            }
         });
         this.setState({
             li_elements: li_elements
