@@ -3,7 +3,10 @@ import React, { Component} from 'react';
 class NabbarMenu extends Component {
     /* NOTES:
      * - this.state.menu_items holds the menu item list. 
-     * - Each menu item needs a title and a link destination, as shown below. 
+     * - Each menu item needs a title 
+     * - Each menu item needs either an href or onClick attribute
+     *     - href works for menu items that are links
+     *     - onClick works for menu items that call functions
      * - Add as many or as few menu items as you want */
     constructor(props) {
         super(props);
@@ -23,7 +26,7 @@ class NabbarMenu extends Component {
                 },
                 {
                     title: "# To add a Nav bar",
-                    onClick:  this.testFunc
+                    onClick:  this.tempFunc
                 },
                 {
                     title: "# To your website",
@@ -35,8 +38,8 @@ class NabbarMenu extends Component {
         };
     }
 
-    testFunc() {
-        alert("woah");
+    tempFunc() {
+        alert("Woah, I'm a function!");
     }
 
     componentWillMount() {
