@@ -22,7 +22,6 @@
     grid-template-areas: "nav"
     "body"
 }
-
 #body {
     grid-area: body;
 }
@@ -41,14 +40,107 @@
     display: flex;
     flex-direction: row;
 }
-
 .hidden-nav {
     margin-left: -260px;
 }
-
 .shown-nav{
     margin-left: 0px;
     box-shadow: 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23);
+}
+
+/***********************************************************
+ * Begin top bar rules
+ ***********************************************************/
+
+.top-bar {
+    transition: .4s;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+.top-bar.shown-nav-top-bar{
+    width:190px;
+    margin-left: -15px;
+}
+
+/***********************************************************
+ * Begin nav title rules
+ ***********************************************************/
+
+#nav-title {
+    font-weight: 600;
+    color: var(--dark-color);
+    z-index: 50;
+    transition: .4s;
+}
+#nav-title > a {
+    color: var(--dark-color);
+    text-decoration: none;
+    width: 100%;
+    height: 70px;
+    padding-top: 20px;
+}
+
+/***********************************************************
+ * Begin hamburger menu rules
+ ***********************************************************/
+
+#hamburger {
+    margin-top: 0px;
+    padding-top: 30px;
+    height: 30px;
+    transition: 0.4s;
+    position:absolute;
+    z-index: 60;
+    cursor:pointer;
+}
+#hamburger:hover {
+    cursor:pointer;
+}
+.top-bun,
+.meat,
+.bottom-bun {
+    transition: 0.3s;
+    display: block;
+    width: 40px;
+    height: 5.5px;
+    position: relative;
+    background: var(--dark-color);
+    border-radius: 10px;
+    z-index: 10;
+}
+.hidden-nav-burger {
+    left: 15px;
+    top: -10px;
+}
+.hidden-nav-burger> .top-bun {
+    transform: rotate(0deg);
+    margin-bottom: 5px;
+}
+.hidden-nav-burger > .bottom-bun {
+    transform: rotate(0deg);
+    margin-top: 5px;
+}
+.hidden-nav-burger > .meat {
+    opacity: 1;
+}
+.shown-nav-burger {
+    left: 210px;
+    top: -5px;
+}
+.shown-nav-burger > .top-bun {
+    transform: rotate(45deg);
+    margin-top: 5px;
+}
+.shown-nav-burger > .bottom-bun {
+    margin-top: -10px;
+    transform: rotate(-45deg);
+}
+.shown-nav-burger > .meat {
+    opacity: 0;
 }
 
 /***********************************************************
@@ -67,7 +159,6 @@
     transition: 0.3s;
     z-index: 40;
 }
-
 #nav-menu {
     margin-top: 70px;
     list-style: none;
@@ -76,8 +167,6 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
-
-
 .nav-menu-item {
     display: flex;
     flex-flow: column wrap;
@@ -94,128 +183,18 @@
 .nav-menu-link{
     width: 100%;
     height: 100%;
-    padding: 35px 60px 35px 0px;
+    padding: 35px 60px 35px 30px;
     cursor:pointer;
     text-align: left;
     color: var(--dark-color);
     text-decoration: none;
 }
-
-
 .nav-menu-item:nth-child(even) {
     background: var(--nav-color);
 }
-
 .nav-menu-link:hover {
     background: var(--dark-color);
     color: var(--bg-color);
-}
-
-/***********************************************************
- * Begin hamburger menu rules
- ***********************************************************/
-
-#hamburger {
-    margin-top: 0px;
-    padding-top: 30px;
-    height: 30px;
-    transition: 0.4s;
-    position:absolute;
-    z-index: 60;
-    cursor:pointer;
-}
-
-#hamburger:hover {
-    cursor:pointer;
-}
-
-.top-bun,
-.meat,
-.bottom-bun {
-    transition: 0.3s;
-    display: block;
-    width: 40px;
-    height: 5.5px;
-    position: relative;
-    background: var(--dark-color);
-    border-radius: 10px;
-    z-index: 10;
-}
-
-.hidden-nav-burger {
-    left: 15px;
-    top: -10px;
-}
-
-.hidden-nav-burger> .top-bun {
-    transform: rotate(0deg);
-    margin-bottom: 5px;
-}
-
-.hidden-nav-burger > .bottom-bun {
-    transform: rotate(0deg);
-    margin-top: 5px;
-}
-
-.hidden-nav-burger > .meat {
-    opacity: 1;
-}
-
-.shown-nav-burger {
-    left: 210px;
-    top: -5px;
-}
-
-.shown-nav-burger > .top-bun {
-    transform: rotate(45deg);
-    margin-top: 5px;
-}
-
-.shown-nav-burger > .bottom-bun {
-    margin-top: -10px;
-    transform: rotate(-45deg);
-}
-
-.shown-nav-burger > .meat {
-    opacity: 0;
-}
-
-/***********************************************************
- * Begin nav title rules
- ***********************************************************/
-
-#nav-title {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    color: var(--dark-color);
-    height:70px;
-    width: 100%;
-    margin-left: auto;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    z-index: 40;
-    transition: .4s;
-}
-
-#nav-title.shown-nav-title {
-    align-items: flex-start;
-    margin-left: 15px;
-    width: 190px;
-}
-#nav-title.shown-nav-title >a {
-    text-align: left;
-}
-
-#nav-title > a {
-    color: var(--dark-color);
-    text-decoration: none;
-    width: 100%;
-    height: 70px;
-    padding-top: 20px;
 }
 
 /***********************************************************
@@ -239,11 +218,9 @@
     height: 100vh;
     cursor: pointer;
 }
-
 #nav-background-clicker-shown-nav:hover{
     cursor: pointer;
 }
-
 
 /***********************************************************
  * Begin media queries
@@ -256,19 +233,12 @@
         grid-template-areas: "fixed-nav nav"
         "fixed-nav body"
     }
-
-    #nav-title {
-        margin-left: 50% ;
-    }
-
     .shown-nav {
         box-shadow: none;
     }
-
     #hamburger {
         display:none;
     }
-
     #nav-menu-container,
     .hidden-nav,
     .shown-nav{
@@ -276,11 +246,11 @@
         position:fixed;
         margin-left: 0;
     }
-
-    #nav-title.shown-nav-title {
-        align-items: center;
-        margin-left: 50%;
+    #nav-title {
+        margin-left: 260px;
     }
-
+    .top-bar.shown-nav-top-bar{
+        width:100%;
+    }
 }
 
