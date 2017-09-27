@@ -94,9 +94,9 @@
 .nav-menu-link{
     width: 100%;
     height: 100%;
-    margin-left: -60px;
     padding: 35px 60px 35px 0px;
     cursor:pointer;
+    text-align: left;
     color: var(--dark-color);
     text-decoration: none;
 }
@@ -192,17 +192,22 @@
     font-weight: 600;
     color: var(--dark-color);
     height:70px;
-    width: 240px;
-    margin-left: calc(50% - 130px);
+    width: 100%;
+    margin-left: auto;
+    text-align: center;
     margin-top: 0;
     margin-bottom: 0;
-    z-index: 90;
+    z-index: 40;
     transition: .4s;
 }
 
 #nav-title.shown-nav-title {
     align-items: flex-start;
-    margin-left: -50px;
+    margin-left: 15px;
+    width: 190px;
+}
+#nav-title.shown-nav-title >a {
+    text-align: left;
 }
 
 #nav-title > a {
