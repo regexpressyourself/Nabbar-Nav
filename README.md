@@ -91,7 +91,7 @@ render() {
 
 Menu Items in your navigation are defined as an array of objects, and can be passed to Nabbar as props under the name "menu_items", as follows:
 
-```
+```js
 <Nabbar menu_items={menu_items_object_array} />
 ```
 
@@ -99,7 +99,7 @@ When clicked, Menu Items can either call a component function or link to a route
 
 Each menu item object is laid out as follows:
 
-```
+```js
    {
       // title is required
       title: Title Of Menu Item, 
@@ -113,8 +113,8 @@ Each menu item object is laid out as follows:
 ```
 
 Creating an array of these objects and passing them to Nabbar as props ensures that they will be placed on the navigation. See below for example:
-```
 
+```js
 render() {
     let menu_items = [
         {
@@ -124,7 +124,7 @@ render() {
         {
             title: "# Menu Item 2",
             onClick:  this.FunctionCalledByMenuItem2
-        },
+        }
     ];
     return (
         <div className="App">
