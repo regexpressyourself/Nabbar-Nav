@@ -7,7 +7,8 @@ class Nabbar extends Component {
         super(props);
 
         this.state = {
-            nav_element_class: "hidden-nav"
+            nav_element_class: "hidden-nav",
+            menu_items: props.menu_items ? props.menu_items : []
         };
 
         this.toggleNav          = this.toggleNav.bind(this);
@@ -20,6 +21,13 @@ class Nabbar extends Component {
     componentDidMount() {
         /* Register an event listener for user clicks */
         document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        /* Get the menu items objects from props */
+        this.setState({
+            menu_items: nextProps.menu_items
+        });
     }
 
     componentWillUnmount() {
@@ -123,7 +131,7 @@ class Nabbar extends Component {
                 <div id="nav-menu-container" 
                     className={nav_toggle}
                     ref={this.setSideNavRef}>
-                    <NabbarMenu />
+                    <NabbarMenu menu_items={this.state.menu_items} />
                 </div>
 
                 {/* Background Clicker (see Nav.css for details) */}
