@@ -69,7 +69,7 @@ className="App"
 and the body should have an attribute of:
 
 ```
-   className="Body"
+className="Body"
 ```
 
 A mockup of the top-level component's render method is as follows:
@@ -89,11 +89,15 @@ render() {
 
 ### Defining Menu Items
 
-Menu Items in your navigation can be defined in the NabbarMenu component. All menu items are stored in NabbarMenu's state as objects in an array. 
+Menu Items in your navigation are defined as an array of objects, and can be passed to Nabbar as props under the name "menu_items", as follows:
 
-Menu Items can either call a component function, or link to a route, depending on how you define your menu item objects.
+```
+<Nabbar menu_items={menu_items_object_array} />
+```
 
-The menu item object is laid out as follows:
+When clicked, Menu Items can either call a component function or link to a route, depending on how you define your menu item objects.
+
+Each menu item object is laid out as follows:
 
 ```
    {
@@ -106,6 +110,30 @@ The menu item object is laid out as follows:
       // onClick should only be declared if the menu item calls a function
       onClick: The function to be called when clicking the menu item
    }
+```
+
+Creating an array of these objects and passing them to Nabbar as props ensures that they will be placed on the navigation. See below for example:
+```
+
+render() {
+    let menu_items = [
+        {
+            title: "# Menu Item 1",
+            href:  "/link_for_menu_item_1"
+        },
+        {
+            title: "# Menu Item 2",
+            onClick:  this.FunctionCalledByMenuItem2
+        },
+    ];
+    return (
+        <div className="App">
+            <Nabbar menu_items={menu_items} />
+            <div className="Body">
+            </div>
+        </div>
+    );
+}
 ```
 
 
